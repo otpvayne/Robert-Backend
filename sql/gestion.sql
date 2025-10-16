@@ -1,15 +1,11 @@
-CREATE DATABASE IF NOT EXISTS gestion;
-USE gestion;
-
-CREATE TABLE users (
-  id MEDIUMINT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS users (
+  id SERIAL PRIMARY KEY,
   firstName VARCHAR(32) NOT NULL,
   lastName VARCHAR(32) NOT NULL,
-  document VARCHAR(16) NOT NULL UNIQUE,
+  document VARCHAR(16) UNIQUE NOT NULL,
   address VARCHAR(64),
   phone VARCHAR(20),
-  email VARCHAR(64),
-  PRIMARY KEY (id)
+  email VARCHAR(64)
 );
 
 INSERT INTO users (firstName,lastName,document,address,phone,email) VALUES
